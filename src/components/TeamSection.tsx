@@ -16,7 +16,7 @@ interface TeamSectionProps {
 
 const TeamSection = ({ title, members }: TeamSectionProps) => {
   return (
-    <div className="mb-16 text-center">
+    <div className="mb-16">
       <div className="relative">
         <h2 className="text-3xl font-bold text-center mb-10 text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-600">
           {title}
