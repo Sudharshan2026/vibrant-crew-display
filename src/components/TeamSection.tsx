@@ -15,6 +15,11 @@ interface TeamSectionProps {
 }
 
 const TeamSection = ({ title, members }: TeamSectionProps) => {
+  // Determine layout class based on number of members
+  const gridLayoutClass = members.length === 1 
+    ? "flex justify-center" // Use flex with center justify for a single card
+    : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8";
+
   return (
     <div className="mb-16">
       <div className="relative">
@@ -24,7 +29,7 @@ const TeamSection = ({ title, members }: TeamSectionProps) => {
         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-red-400 to-red-600"></div>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div className={`${gridLayoutClass} max-w-6xl mx-auto`}>
         {members.map((member, index) => (
           <TeamMemberCard
             key={index}
