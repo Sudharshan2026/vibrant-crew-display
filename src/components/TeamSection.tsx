@@ -17,8 +17,8 @@ interface TeamSectionProps {
 const TeamSection = ({ title, members }: TeamSectionProps) => {
   // Determine layout class based on number of members
   const gridLayoutClass = members.length === 1 
-    ? "flex justify-center" // Use flex with center justify for a single card
-    : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8";
+    ? "flex justify-center" // Center single card using flex
+    : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center"; // Center grid items
 
   return (
     <div className="mb-16">
